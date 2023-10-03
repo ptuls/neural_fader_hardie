@@ -129,6 +129,7 @@ dmypy.json
 .pyre/
 
 *.csv
+.idea/
 lightning_logs/
 saved/
 scratch.txt

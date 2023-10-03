@@ -1,4 +1,4 @@
-# Neural Contractual Churn 
+# Neural Fader-Hardie Model
 
 In this repository, we present a neural network-based variant of the [Fader-Hardie model](https://faculty.wharton.upenn.edu/wp-content/uploads/2012/04/Fader_hardie_jim_07.pdf) for contractual customer churn.
 
@@ -43,7 +43,7 @@ Beyond the aforementioned facetious statement, there are reasons why you might w
 * **flexibility in introducing more features over time**: unlike the Fader-Hardie model, we don't have to slice our cohorts and fit a model per cohort. For instance, businesses typically treat churn differently across different regions around the world. In this case, countries can be included into the model via an embedding layer, which in turn allows the model to learn representations of country embeddings. The ability to leverage deep learning in this context is very powerful.
 
 * **ability to try various feature extractors**: we can try various feature extraction modules depending on the dataset, given the
-flexibility of deep learning.
+  flexibility of deep learning.
 
 * **easy extension to sequences of cohorts by using a sequence based model**: if the model incorporates a recurrent neural network (RNN), then we can account for previous cohort probabilities of churn by incorporating them into the model.
 
@@ -53,11 +53,15 @@ flexibility of deep learning.
 
 Of course, there are downsides:
 
-* **data requirements**: like other deep learning algorithms, it is required that you have a large dataset. 
+* **data requirements**: like other deep learning algorithms, it is required that you have a large dataset.
 
 * **can't fit into a spreadsheet**: the Fader-Hardie model has closed form solutions for the survival function. We do not, so our model cannot be used in a spreadsheet unlike the original, nor implemented in a SQL script.
 
 * **limited interpretability**: like other black box models, our model cannot be interpreted easily.
+
+## Improvements
+
+The model used here is one example that relies on convolutional layers with a sparsity for feature selection. Other more exotic models such as [TabNet](https://arxiv.org/abs/1908.07442) can be used here too.
 
 ## Running
 
